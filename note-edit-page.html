@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/CSS/styles.css" rel="stylesheet">
+    <link href="/images/TIDYTODO.jpg" rel="icon">
+    <title>Tidy Todo</title>
+    <!-- <title>Note Edit Page</title> -->
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="header__title">Tidy Todo</h1>
+            <h2 class="header__subtitle">Keep Track With Ease</h2>
+                <!-- <h2 class="header__subtitle">Edit Your Tidy Todo</h2> -->
+        </div>
+    </div>
+
+    <div class="actions">
+        <div class="actions__container actions__container--spaced">
+            <a href="index.html">Home</a>
+            <p id="updatedAtNotice"></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div>
+            <label for="editTodoNotes" class="title-input">Todo: <span id="todoListName" contenteditable="true"></span></label>
+            <br>
+            <textarea id="listTextArea" class="body-input"></textarea>
+    
+            <p id="todoLengthMessage" class="empty-message"></p>
+            <form id="addTodoForm" class="form">
+                <input placeholder="Add A Todo" name="todoText" class="input" required>
+                <button class="button">Add</button>
+            </form>
+    
+            <ul id="listContainer"></ul>
+
+            <button id="deleteList" class="button button--secondary">Remove List</button>
+
+        </div>
+    </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js"></script>
+        <script src="/scripts/uuidv4.js"></script>
+        <script src="/scripts/localStorage.js"></script>
+        <script src="/scripts/noteClass.js"></script>
+        <script type="module" src="/scripts/_mvc_logic.js"></script>
+        <script type="module" src="/scripts/_mvc_view.js"></script>
+        <script type="module" src="/scripts/_mvc_controller_note_edit.js"></script>
+</body>
+</html>

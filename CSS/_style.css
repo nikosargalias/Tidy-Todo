@@ -1,0 +1,48 @@
+* {
+    background-color: rgb(244, 218, 218);
+    /* display:ruby; */
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+}
+
+.listTitle {
+    display: flex;
+    margin: 5px;
+    color: rgb(0, 0, 0);
+    font-size: 10;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+/* .noteTitle {
+    display: table;
+    margin: 5px;
+    color: rgb(0, 0, 0);
+    font-size: 10;
+    font-weight: 500;
+    text-transform: capitalize;
+} */
+
+.deleteTodoButton {
+    color: seashell;
+    font-weight: 300;
+    background-color: rgb(152, 24, 194);
+    border-radius: 100px;
+    padding: 5px;
+}
+
+.button {
+    color: seashell;
+    font-weight: 600;
+    background-color: rgb(152, 24, 194);
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.input {
+    border-radius: 50px;
+    padding: 5px;
+}

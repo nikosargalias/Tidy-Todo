@@ -1,0 +1,5 @@
+What principles should I use?
+
+pure functions
+principle of least knowledge, functions should not access things that aren't passed in.
+Separations of concerns. Try to keep functions doing as few things as possible
