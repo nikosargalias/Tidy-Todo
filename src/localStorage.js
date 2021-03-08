@@ -17,5 +17,6 @@ function loadFromLocalStorage(key) {
     } 
 }
 
+export {lists, saveToLocalStorage, loadFromLocalStorage}
 
 // localStorage.clear()

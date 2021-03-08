@@ -1,8 +1,11 @@
 //put event listeners
 //Only the controller has access to the other two files. and it's done via a factory (module) function that returns a public api. So those functions have to be called here, in order to get access to them/ 
-
+import {lists, saveToLocalStorage, loadFromLocalStorage} from './localStorage'
 import logic from './_mvc_logic.js'
 import {view} from './_mvc_view.js'
+
+console.log('hello world')
+
 
 window.addEventListener('DOMContentLoaded', () => {
 

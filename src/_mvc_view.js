@@ -1,7 +1,7 @@
 //mvc architecture
 //this is the module that renders everything to the dom
 //the view adds event listeners + also accepts callbacks to add as event listeners - so when someone clicks on something, the logic is activated via a callback
-
+const moment = require('moment');
 
 function view() {
 

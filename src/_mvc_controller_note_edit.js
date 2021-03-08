@@ -1,5 +1,6 @@
 import logic from './_mvc_logic.js'
 import {view} from './_mvc_view.js'
+import {lists, saveToLocalStorage, loadFromLocalStorage} from './localStorage';
 
 window.addEventListener('DOMContentLoaded', () => { 
         

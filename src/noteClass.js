@@ -9,3 +9,5 @@ class NoteListLogic {
         this.timeLastEdited = this.timeCreated
     }
 }
+
+export default NoteListLogic
