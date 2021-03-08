@@ -41,17 +41,11 @@ function view() {
         if (document.getElementById(`${idName}`)) {
             throw new Error('ID is already assigned to existing element')
         }
-        try {
-            // document.getElementById(`${idName}`).remove() //ive kept this here to remember what not to do!!! If id already exists, it should throw an error as it is one! 
-        } catch {
-
-        } finally {
-            const div = document.createElement('div')
-            div.innerHTML = `<
-                <${tag} type="${type}" class="${className}" rel="${rel}" id="${idName}">${textContent}</${tag ? tag : ''}>
-            >`
-            return div.children[0]
-        }
+        const div = document.createElement('div')
+        div.innerHTML = `<
+            <${tag} type="${type}" class="${className}" rel="${rel}" id="${idName}">${textContent}</${tag ? tag : ''}>
+        >`
+        return div.children[0]
     }
 
     function renderListsToDom(lists, domRenderElement) {
@@ -80,23 +74,6 @@ function view() {
             elem.remove()
         })
     }
-
-    // function createTodoElements(listId) {
-    //     const addTodoForm = document.createElement('div')
-    //         addTodoForm.innerHTML = `
-    //                         <span id="addTodoForm${listId}">
-    //                             <form>
-    //                                 <input>
-    //                                 <button>Add Todo</button>
-    //                             </form>
-    //                         </span>`
-    //     return addTodoForm
-    // }
-        
-    // function renderTodos() {
-
-    // }
-    
     
     function createNewElementForList(list) {
         const div = document.createElement('div')
@@ -167,11 +144,7 @@ function view() {
         } finally {
             const div = document.createElement('div')
             div.innerHTML = `<ul id="todoList${listId}"></ul>`
-    
-            // todoList.forEach(todo => {
-                div.children[0].innerHTML += `<li id="todo_${todo.id}">${todo.text}</li>`
-            // })
-
+            div.children[0].innerHTML += `<li id="todo_${todo.id}">${todo.text}</li>`
             return div.children[0]
         }
     }
@@ -208,7 +181,6 @@ function view() {
         renderElement,
         createButton,
         createElement,
-        // createEditTodosShortcut,
         createTodoListElement,
         createForm,
         renderListsToDom,

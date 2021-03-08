@@ -79,16 +79,11 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     
     function renderQuickEditElements(listElements) {
-        // if (listElements.length > 0) {
             listElements.forEach(editElement => {
                 const listId = editElement.id.slice(8)
                 renderElement(editElement, publicEls.listContainer);
                 addEventListenersForQuickEditElements(listId)
             });
-        // } else {
-            // renderEmptyListMessage(publicEls.listContainer);
-            // renderElement(listElements, publicEls.listContainer);
-        // }
     }
 
     function addEventListenersForQuickEditElements(listId) {
@@ -246,53 +241,3 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function renderEditElementsForLists(list) {
-//     const checkbox = createElement({tag: 'input', type: 'checkbox', className: 'checkbox listCheckbox', idName: `checkbox${list.id}`})
-//     const editTodosShortcut = createEditTodosShortcut(list.id)
-//     const addTodoForm = createForm(list)
-//     renderElement(addTodoForm, editTodosShortcut)
-//     addTodoForm.addEventListener('submit', onAddTodoClick);
-//     document.getElementById(`${list.id}`).append(checkbox, editTodosShortcut);
-// }
-
-// function createAndRenderTodosForEachTodo(todos, listId) {
-//     todos.forEach(todo => {
-//         const todoElement = createTodoListElement(todo, listId)
-//         const deleteButton = createElement({ tag:'button', idName:`deleteTodo${todo.id}`, rel:`list_${listId}`, textContent:"X"});
-//         const detailsShortcut = document.getElementById(`details${listId}`);
-//         renderElement(deleteButton, todoElement)
-//         renderElement(todoElement, detailsShortcut)
-//         deleteButton.addEventListener('click', e => { onClickTodoDeleteButton(e) })
-//     })
-// }
-
-// function onClickTodoDeleteButton(e) {
-//     const listId = e.target.attributes.rel.value.slice(5)
-//     const todoId = e.target.id.slice(10)
-//     const list = lists.find(list => list.id === listId)
-//     const index = list.todos.findIndex(e => e.id == todoId)
-//     list.todos.splice(index, 1)
-//     console.log(document.querySelector(`#todo_${todoId}`))
-//     saveToLocalStorage('lists', lists)
-// }

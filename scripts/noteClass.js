@@ -8,8 +8,4 @@ class NoteListLogic {
         this.timeCreated = new Date().getTime()
         this.timeLastEdited = this.timeCreated
     }
-
-    // addTodo(todo) {
-    //     this.todos.push(todo.trim())
-    // }
 }

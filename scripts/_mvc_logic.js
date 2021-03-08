@@ -87,11 +87,6 @@ function logic() {
         saveToLocalStorage('lists', lists)
     };
 
-    // function getTimeSiceLastUpdated(list) {
-    //     return moment(list.timeLastEdited).fromNow()
-    // }
-
-
 
     return {
         createNewList: createNewLists,
@@ -105,7 +100,6 @@ function logic() {
         updateTodoText,
         updateListTitle,
         updateIsCompleted,
-        // getTimeSiceLastUpdated
     }
 
 }

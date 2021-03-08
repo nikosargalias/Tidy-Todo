@@ -32,11 +32,6 @@ function renderNotes(notes, domPosition) {
 
 renderNotes(lists, publicEls.listContainer);
 
-
-
-
-
-
 function eventListenerCallbacks () {
 
     function editListsCallback (e) {
