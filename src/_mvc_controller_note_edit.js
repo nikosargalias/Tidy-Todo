@@ -72,13 +72,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function renderTodos() {
         const todoElements = createTodoElements(list)
-        .forEach(todoObject => {
+        console.log(todoElements)
+        todoElements.forEach(todoObject => {
             publicEls.todosList.innerHTML += todoObject.html
         })
         toggleCheckboxes()
     };
 
     function toggleCheckboxes() {
+        console.log(list)
         list.todos.forEach(todo => {
             const checkbox = document.querySelector(`#checkbox_${todo.id}`)
             checkbox.checked = todo.isCompleted

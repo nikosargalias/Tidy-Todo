@@ -105,7 +105,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const listId = e.target.id.slice(11)
         const todoText = e.target.elements[0].value
         addTodoToList(listId, todoText)
-        const elementToUpdate = e.target.parentElement.parentElement
+        const elementToUpdate = document.querySelector(`#spanList${listId}`)
         updateTodosRender(listId, elementToUpdate)
         updateLastEditedMessage(listId)
     }
@@ -118,7 +118,8 @@ window.addEventListener('DOMContentLoaded', () => {
     function updateTodosRender(listId, elementToUpdate) {
         const list = filters.filteredLists.find(list => list.id === listId)
         const listElement = createListEditElements(list)
-        listElement.children[0].setAttribute('open', 'true')
+        console.log(listElement.children[0])
+        listElement.children[0].setAttribute('open', 'true') //keeps details open
         removeElements(elementToUpdate.children[0])
         elementToUpdate.prepend(listElement.children[0])
         const addTodoFormInput = document.querySelector(`#addTodoForm${listId}`).children[0]

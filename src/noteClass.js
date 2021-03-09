@@ -7,6 +7,7 @@ class NoteListLogic {
         this.id = id
         this.timeCreated = new Date().getTime()
         this.timeLastEdited = this.timeCreated
+        this.numOfTodosCreated = 0
     }
 }
 

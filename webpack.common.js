@@ -5,15 +5,16 @@ module.exports = {
     entry: {
         controller: './src/_mvc_controller.js',
         controllerNote: './src/_mvc_controller_note_edit.js',
-        logic: './src/_mvc_logic.js',
-        view: './src/_mvc_view.js',
-        localStorage: './src/localStorage.js',
-        noteClass: './src/noteClass.js',
     },
     output: {
-        filename: '[name].bundle.[hashname].js',
+        filename: '[name].bundle.[hash].js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
+    },
+    optimization: {
+        splitChunks: {
+          chunks: 'all',
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({  // Also generate a test.html

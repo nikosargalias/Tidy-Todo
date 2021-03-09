@@ -29,9 +29,9 @@ function logic() {
 
     function addTodoToList(id, textContent) {
         const list = lists.find(list => list.id === id)
-
+        list.numOfTodosCreated += 1
         list.todos.push({
-            id: list.todos.length,
+            id: list.numOfTodosCreated,
             text: textContent,
             isCompleted: false
         })
