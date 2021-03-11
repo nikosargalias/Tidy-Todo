@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function navigateHome() {
-        location.assign("/index.html")
+        location.assign("./index.html")
     }
 
     function onTypeUpdateListText(e) {

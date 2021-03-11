@@ -3,6 +3,7 @@
 import {lists, saveToLocalStorage, loadFromLocalStorage} from './localStorage'
 import logic from './_mvc_logic.js'
 import {view} from './_mvc_view.js'
+// import "regenerator-runtime/runtime";
 
 console.log('hello world')
 
@@ -243,5 +244,13 @@ window.addEventListener('DOMContentLoaded', () => {
         updateFilteredLists()
         renderFilteredLists(filters.filteredLists)
     }
+
+    // async function foo() {
+    //     await "hello"
+    // }
     
+    // document.querySelector('#pushMe').addEventListener('click', (e) => {
+    //     const boo = foo()
+    //     console.log(boo)
+    // })
 });

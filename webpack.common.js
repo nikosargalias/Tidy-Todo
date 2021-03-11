@@ -3,11 +3,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        controller: './src/_mvc_controller.js',
-        controllerNote: './src/_mvc_controller_note_edit.js',
+        controller: {
+            import: './src/_mvc_controller.js',
+        },
+        controllerNote: {
+            import: './src/_mvc_controller_note_edit.js',
+        }
     },
     output: {
-        filename: '[name].bundle.[hash].js',
+        filename: '[name].[hash].js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
@@ -20,25 +24,27 @@ module.exports = {
         new HtmlWebpackPlugin({  // Also generate a test.html
             filename: 'index.html',
             template: './index.html',
-            minify: false,
             inject: "body",
             excludeChunks: ["controllerNote"]
           }),
           new HtmlWebpackPlugin({  // Also generate a test.html
             filename: 'note-edit-page.html',
             template: './note-edit-page.html',
-            minify: false,
             inject: "body",
             excludeChunks: ["controller"]
           })
     ],
-    devtool: 'inline-source-map',
     module: {
         rules: [
             {
                 test: /\.html$/i,
                 loader: 'html-loader',
             },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ['babel-loader']
+            }
         ]
-    }
+    },
 };

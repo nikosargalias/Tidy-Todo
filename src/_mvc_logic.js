@@ -2,16 +2,14 @@
 
 // const controller = new eventCallbacks(renderNotes)
 import {lists, saveToLocalStorage, loadFromLocalStorage} from './localStorage';
-import NoteListLogic from './noteClass';
-// const { uuid } = require('uuidv4');
+import NoteClass from './noteClass';
 import { v4 as uuid } from 'uuid';
-// const uuid = () => 10
 const moment = require('moment');
 
 function logic() {
     
     function createNewLists(title, id) {
-        const newList = new NoteListLogic(title, uuid())
+        const newList = new NoteClass(title, uuid())
         saveListToListDatabase(newList)
         return newList
     }

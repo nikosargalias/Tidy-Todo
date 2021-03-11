@@ -1,4 +1,4 @@
-class NoteListLogic {
+class NoteClass {
 
     constructor(title, id) {
         this.title = title
@@ -11,4 +11,4 @@ class NoteListLogic {
     }
 }
 
-export default NoteListLogic
+export default NoteClass

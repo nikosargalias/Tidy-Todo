@@ -1,7 +1,7 @@
 {
   "name": "Tidy-Todo",
   "version": "1.0.0",
-  "description": "",
+  "descriptio3-createn": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/nikosargalias/Tidy-Todo#readme",
   "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "babel-loader": "^8.2.2",
     "css-loader": "^5.1.1",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.0",
@@ -28,8 +31,10 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "core-js": "^3.9.1",
     "loader-utils": "^2.0.0",
     "moment": "^2.29.1",
+    "regenerator-runtime": "^0.13.7",
     "util": "^0.12.3",
     "uuid": "^8.3.2"
   }
