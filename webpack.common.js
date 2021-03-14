@@ -11,14 +11,9 @@ module.exports = {
         }
     },
     output: {
-        filename: '[name].[hash].js',
+        filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
-    },
-    optimization: {
-        splitChunks: {
-          chunks: 'all',
-        }
     },
     plugins: [
         new HtmlWebpackPlugin({  // Also generate a test.html
@@ -39,11 +34,6 @@ module.exports = {
             {
                 test: /\.html$/i,
                 loader: 'html-loader',
-            },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: ['babel-loader']
             }
         ]
     },

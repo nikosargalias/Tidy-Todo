@@ -5,7 +5,6 @@ import {lists, saveToLocalStorage, loadFromLocalStorage} from './localStorage';
 import NoteClass from './noteClass';
 import { v4 as uuid } from 'uuid';
 const moment = require('moment');
-
 function logic() {
     
     function createNewLists(title, id) {
