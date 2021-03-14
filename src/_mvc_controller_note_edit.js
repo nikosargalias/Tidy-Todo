@@ -1,6 +1,6 @@
 import logic from './_mvc_logic.js'
 import {view} from './_mvc_view.js'
-import {lists, saveToLocalStorage, loadFromLocalStorage} from './localStorage';
+import {lists} from './localStorage';
 
 window.addEventListener('DOMContentLoaded', () => { 
         
@@ -14,8 +14,8 @@ window.addEventListener('DOMContentLoaded', () => {
         todosLengthMessage: document.querySelector('#todoLengthMessage')
     }
 
-    const {updateIsCompleted, updateListTitle, updateTodoText, updateListNotes, sortByDateLastEdited, sortByTimeCreated, deleteTodoFromList, addTodoToList, createNewList, deleteList, saveListToListDatabase} = logic()
-    const {renderTodosLengthMessage, createRemoveListConfirmation, replaceElement, clearElement, createTodoElements, updateLastEditedRender, updateTextContent, removeElements, createListEditElements, createForm, createTodoListElement, createEditTodosShortcut, createCheckbox, createDeleteButton, createNewElementForList, renderElement, createButton, addCheckboxesToListElements, addDetailsToListElements, createElement, renderEditListElements, renderListsToDom} = view();
+    const {updateIsCompleted, updateListTitle, updateTodoText, updateListNotes, deleteTodoFromList, addTodoToList, deleteList} = logic()
+    const {renderTodosLengthMessage, createRemoveListConfirmation, replaceElement, clearElement, createTodoElements, updateLastEditedRender, updateTextContent, removeElements} = view();
 
     const targetListId = location.hash.substring(1)
     const list = lists.find((list) => list.id === targetListId);
@@ -38,17 +38,19 @@ window.addEventListener('DOMContentLoaded', () => {
     renderTodosLengthMessage(list, publicEls.todosLengthMessage)
 
     function onClickDeleteListButton(e) {
-        const originalButton = e.target
+        // const originalButton = e.target
         const removeListConfirmation = createRemoveListConfirmation(list.id)
         replaceElement(e.target, removeListConfirmation)
         addEventListenersForRemoveList()
     }
 
+    // eslint-disable-next-line no-unused-vars
     function onClickRemoveList(e) {
         deleteList(list.id)
         navigateHome()
     }
 
+    // eslint-disable-next-line no-unused-vars
     function onClickCancelRemoveList(e) {
         document.querySelector(`#removeListConfirmation${list.id}`).replaceWith(publicEls.deleteListButton)
     }
@@ -77,7 +79,7 @@ window.addEventListener('DOMContentLoaded', () => {
             publicEls.todosList.innerHTML += todoObject.html
         })
         toggleCheckboxes()
-    };
+    }
 
     function toggleCheckboxes() {
         console.log(list)

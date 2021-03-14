@@ -1,13 +1,14 @@
 //functions for how to change the data, and resend everything to the view.js to re-render everything
 
 // const controller = new eventCallbacks(renderNotes)
-import {lists, saveToLocalStorage, loadFromLocalStorage} from './localStorage';
+import {lists, saveToLocalStorage} from './localStorage';
 import NoteClass from './noteClass';
 import { v4 as uuid } from 'uuid';
 const moment = require('moment');
+
 function logic() {
     
-    function createNewLists(title, id) {
+    function createNewLists(title) {
         const newList = new NoteClass(title, uuid())
         saveListToListDatabase(newList)
         return newList
@@ -88,7 +89,7 @@ function logic() {
         todo.isCompleted = isChecked
         updateLastEdited(list)
         saveToLocalStorage('lists', lists)
-    };
+    }
 
 
     return {

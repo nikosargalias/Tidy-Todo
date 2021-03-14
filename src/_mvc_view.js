@@ -16,7 +16,7 @@ function view() {
 
     function clearElement(element) {
         element.innerHTML = ''
-    };
+    }
 
     function renderElement(element, domPositionToAppend){
         domPositionToAppend.append(element)
@@ -32,7 +32,8 @@ function view() {
         } finally {
             const div = document.createElement('div')
             div.innerHTML = `<button class="${className}" id="${idName}"> ${textContent} </button>`
-            const button = div.children[0]
+            const button = div.children[0];
+            // eslint-disable-next-line no-unsafe-finally
             return button
         }
     }
@@ -52,6 +53,7 @@ function view() {
         console.log(lists.length)
         if (lists.length > 0) {
             domRenderElement.innerHTML = ''
+            // eslint-disable-next-line no-unused-vars
             const listElements = lists.map(list => createNewElementForList(list))
             .forEach(list => {
                 renderElement(list, domRenderElement)
@@ -60,7 +62,7 @@ function view() {
         else {
             renderEmptyListMessage(domRenderElement)
         }
-    };
+    }
 
     function renderEmptyListMessage(domRenderElement) {
         const emptyListMessage = document.createElement('p');
@@ -136,15 +138,17 @@ function view() {
         return todoElements
     }
 
-    function createTodoListElement(todo, listId, todoList, id) {
+    function createTodoListElement(todo, listId) {
         try {
             document.getElementById(`todoList${listId}`).remove()
+        // eslint-disable-next-line no-empty
         } catch {
 
         } finally {
             const div = document.createElement('div')
             div.innerHTML = `<ul id="todoList${listId}"></ul>`
             div.children[0].innerHTML += `<li id="todo_${todo.id}">${todo.text}</li>`
+            // eslint-disable-next-line no-unsafe-finally
             return div.children[0]
         }
     }
