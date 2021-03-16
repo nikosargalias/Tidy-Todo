@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 //put event listeners
 //Only the controller has access to the other two files. and it's done via a factory (module) function that returns a public api. So those functions have to be called here, in order to get access to them/ 
-import {lists, saveToLocalStorage, loadFromLocalStorage} from './localStorage'
+import {lists} from './localStorage'
 import logic from './_mvc_logic.js'
 import {view} from './_mvc_view.js'
 // import "regenerator-runtime/runtime";
@@ -187,7 +188,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 const listID = checkbox.id.slice(8)
                 deleteList(listID)
                 updateFilteredLists()
-            };
+            }
         })
     }
 
